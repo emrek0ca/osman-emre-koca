@@ -1,0 +1,436 @@
+/* ================================================================
+   Portfolio — Osman Emre Koca
+   Inspired by hetansh.dev: narrow centered column, clean, minimal
+   ================================================================ */
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img, video { display: block; max-width: 100%; }
+button { cursor: pointer; background: none; border: none; font: inherit; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* ── TOKENS ── */
+:root {
+  --bg:       #ffffff;
+  --surface:  #f9f9f9;
+  --border:   #e5e5e5;
+  --text:     #111111;
+  --muted:    #6b6b6b;
+  --faint:    #a3a3a3;
+  --accent:   #111111;   /* skill pills background */
+  --on-accent:#ffffff;
+  --link:     #2563eb;
+
+  --font-sans: 'Inter', 'Satoshi', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  --radius: 8px;
+  --radius-full: 9999px;
+}
+
+/* ── BASE ── */
+html {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+body { 
+  min-height: 100dvh; 
+  padding-bottom: 96px; 
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+::selection { background: #111; color: #fff; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+/* ── PAGE WRAPPER ── */
+/* Max 672px (42rem), centered, 16px padding — matches hetansh.dev max-w-2xl px-4 */
+.page {
+  max-width: 672px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 48px;
+}
+.section-inner {
+  padding: 24px;
+}
+
+/* ── HERO ── */
+.hero {
+  padding-top: 32px;
+  padding-bottom: 0;
+}
+.hero__title {
+  font-size: clamp(2rem, 5vw + 0.5rem, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.hero__sub {
+  font-size: var(--text-lg);
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 45ch;
+  margin-bottom: 24px;
+}
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hero__link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--link);
+}
+.hero__link:hover { text-decoration: underline; }
+
+/* ── SECTION HEADING ── */
+.sh {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.sh-sub {
+  font-size: var(--text-base);
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 45ch;
+  margin-bottom: 32px;
+}
+
+/* ── PROJECT LIST ── */
+.proj-list {
+  display: grid;
+  gap: 0;
+}
+.proj-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 120ms ease;
+}
+.proj-item:first-child { border-top: 1px solid var(--border); }
+.proj-item:hover { opacity: 0.72; }
+.proj-item:hover .proj-arrow { transform: translate(2px, -2px); }
+
+.proj-num {
+  font-size: var(--text-sm);
+  color: var(--faint);
+  width: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.proj-body { flex: 1; min-width: 0; }
+.proj-name {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* Elyan gets a special accent */
+.proj-item--featured .proj-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.proj-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+.proj-live::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.proj-desc {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  line-height: 1.55;
+  margin-top: 4px;
+}
+.proj-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.proj-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--faint);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.proj-year {
+  font-size: 0.7rem;
+  color: var(--faint);
+  margin-left: auto;
+}
+.proj-arrow {
+  font-size: var(--text-base);
+  color: var(--faint);
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: transform 120ms ease;
+}
+
+/* Elyan extra info box */
+.elyan-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+.elyan-box__row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+.elyan-box__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  width: 60px;
+  flex-shrink: 0;
+}
+.elyan-box__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.elyan-box__link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: none;
+}
+.elyan-box__link:hover { text-decoration: underline; }
+.elyan-box__code {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+/* ── SKILL PILLS ── */
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-pill {
+  padding: 7px 14px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1;
+  cursor: default;
+  transition: opacity 120ms ease;
+}
+.skill-pill:hover { opacity: 0.75; }
+
+/* ── EXPERIENCE LIST ── */
+.exp-list { display: grid; gap: 0; }
+.exp-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.exp-item:first-child { border-top: 1px solid var(--border); }
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.exp-role {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text);
+}
+.exp-company {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin-top: 2px;
+}
+.exp-period {
+  font-size: var(--text-sm);
+  color: var(--faint);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.exp-points { display: grid; gap: 4px; }
+.exp-point {
+  display: flex;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--muted);
+  line-height: 1.5;
+}
+.exp-dot { color: var(--faint); flex-shrink: 0; }
+
+/* ── CONTACT ── */
+.contact-links {
+  display: grid;
+  gap: 0;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 120ms ease;
+}
+.contact-link:first-child { border-top: 1px solid var(--border); }
+.contact-link:hover { opacity: 0.6; }
+.contact-link__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.contact-link__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  flex-shrink: 0;
+}
+.contact-link__value {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  word-break: break-word; /* Fix for long emails/URLs on mobile */
+  text-align: right;
+}
+.contact-link__arrow {
+  font-size: var(--text-base);
+  color: var(--faint);
+}
+
+/* ── BOTTOM DOCK NAV ── (pill, fixed bottom center) */
+.dock {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+}
+.dock__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all 120ms ease;
+  text-decoration: none;
+}
+.dock__link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+.dock__link.active {
+  color: var(--text);
+  background: var(--surface);
+}
+.dock__sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+/* small text labels in dock */
+.dock__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em; }
+
+/* ── DIVIDER ── */
+.divider { height: 1px; background: var(--border); margin-block: 0; }
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: var(--text-sm);
+  color: var(--faint);
+}
+
+/* ── UTILITY ── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
