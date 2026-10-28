@@ -1,14 +1,13 @@
 const EXP = [
   {
-    role: 'Founder & Full Stack Developer',
-    company: 'WitlyDesign & Software',
+    role: 'Founder & Software Engineer',
+    company: 'Witly Design & Software',
     period: '2021 — Now',
     points: [
-      'Founded and run a software agency end-to-end — from requirements to production',
-      'React + TypeScript web apps delivered on time, improving client efficiency by ~30%',
-      'Node.js REST APIs handling 1,000+ daily requests with 99.9% uptime',
-      'Ubuntu VPS + Nginx + SSL deployments, cutting release time by 50%',
-      'CRM and workflow tools actively used by multiple SMB clients',
+      'Built and delivered custom web, backend, e-commerce, CRM and business automation systems for 20+ clients',
+      'Own projects end-to-end: requirements, architecture, Node.js/TypeScript APIs, database design, integrations, deployment and production support',
+      'Deploy and operate services on Linux VPS with Nginx, PM2 and SSL, and troubleshoot production issues directly',
+      'Integrate payment providers and third-party APIs, including marketplace payment and order-management workflows',
     ],
   },
   {
@@ -16,8 +15,8 @@ const EXP = [
     company: 'Freelance',
     period: '2021 — Now',
     points: [
-      'Node.js services on Linux with PM2 clustering for concurrent traffic',
-      'BaaS architectures reducing dev costs by ~40% for early-stage startups',
+      'Develop and maintain backend services, REST APIs and data flows for production applications',
+      'Work across JavaScript/TypeScript, Python, SQL and Linux with a focus on reliability and practical delivery',
     ],
   },
 ]

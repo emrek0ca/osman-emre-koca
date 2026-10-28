@@ -156,7 +156,7 @@ body {
   line-height: 1.3;
 }
 
-/* Elyan gets a special accent */
+/* Featured project accent */
 .proj-item--featured .proj-name {
   display: flex;
   align-items: center;
@@ -218,8 +218,8 @@ body {
   transition: transform 120ms ease;
 }
 
-/* Elyan extra info box */
-.elyan-box {
+/* Featured project info box */
+.feat-box {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -228,7 +228,7 @@ body {
   display: grid;
   gap: 8px;
 }
-.elyan-box__row {
+.feat-box__row {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -236,28 +236,28 @@ body {
   font-size: var(--text-sm);
   color: var(--muted);
 }
-.elyan-box__label {
+.feat-box__label {
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--faint);
-  width: 60px;
+  width: 76px;
   flex-shrink: 0;
 }
-.elyan-box__links {
+.feat-box__links {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
-.elyan-box__link {
+.feat-box__link {
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--link);
   text-decoration: none;
 }
-.elyan-box__link:hover { text-decoration: underline; }
-.elyan-box__code {
+.feat-box__link:hover { text-decoration: underline; }
+.feat-box__code {
   font-family: 'SFMono-Regular', Consolas, monospace;
   font-size: 0.8rem;
   color: var(--text);

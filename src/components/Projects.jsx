@@ -1,31 +1,38 @@
 const PROJECTS = [
   {
     id: '01',
-    name: 'Elyan',
+    name: 'Wiqo',
     featured: true,
-    desc: 'Personal AI agent that controls your computer and phone through natural language. Local-first and privacy-focused — your files never leave your machine.',
-    tags: ['Astro', 'TypeScript', 'Node.js', 'Python', 'Flutter', 'REST API'],
-    year: '2024–Now',
-    href: 'https://elyan.dev',
-    platforms: ['macOS', 'Windows', 'Linux', 'iOS (App Store)', 'npm CLI'],
+    desc: 'AI agent that turns natural-language requests into executable tasks on your computer. Send a request from your phone, approve the sensitive steps, and Wiqo carries it out. Built around backend orchestration, LLM integrations and task execution, designed for production behavior rather than demos.',
+    tags: ['TypeScript', 'Node.js', 'LLM APIs', 'Agent Orchestration'],
+    year: '2026–Now',
+    href: 'https://wiqoai.com',
+    platforms: ['macOS', 'iPhone companion', 'Windows (in progress)'],
     links: [
-      { label: 'elyan.dev', href: 'https://elyan.dev' },
-      { label: 'App Store', href: 'https://apps.apple.com/tr/app/elyan/id6779045459' },
-      { label: 'GitHub', href: 'https://github.com/emrek0ca' },
+      { label: 'wiqoai.com', href: 'https://wiqoai.com' },
+      { label: 'GitHub', href: 'https://github.com/emrek0ca/wiqo' },
     ],
-    npm: 'npm install -g elyan',
   },
   {
     id: '02',
-    name: 'IRix',
+    name: 'Retail POS Platform',
     featured: false,
-    desc: 'Multi-vendor e-commerce management panel with real-time order tracking. Deployed on AWS with secure Stripe payment API integrations.',
-    tags: ['Next.js', 'TypeScript', 'Node.js', 'Stripe', 'AWS'],
-    year: '2025',
+    desc: 'Offline-first Windows POS with barcode sales, weighted products, discounts, returns, ESC/POS receipts and crash recovery. Local SQLite plus a central PostgreSQL backend with queued, idempotent sync for unreliable networks.',
+    tags: ['Node.js', 'TypeScript', 'SQLite', 'PostgreSQL'],
+    year: '2026',
     href: null,
   },
   {
     id: '03',
+    name: 'IRix',
+    featured: false,
+    desc: 'Multi-vendor e-commerce management panel that runs independent stores through authenticated APIs, with iyzico Marketplace payment flows and real-time order management.',
+    tags: ['React', 'Node.js', 'iyzico'],
+    year: '2025',
+    href: null,
+  },
+  {
+    id: '04',
     name: 'Monex',
     featured: false,
     desc: 'Finance & portfolio dashboard with interactive charts, dynamic dock UI, and real-time state management.',
@@ -34,7 +41,7 @@ const PROJECTS = [
     href: null,
   },
   {
-    id: '04',
+    id: '05',
     name: 'Witly Omega',
     featured: false,
     desc: 'Windows desktop app for system optimization, file cleanup, and RAM management with a user-friendly dashboard.',
@@ -90,27 +97,23 @@ export default function Projects() {
                     <p className="proj-desc">{p.desc}</p>
 
                     {p.featured && (
-                      <div className="elyan-box">
-                        <div className="elyan-box__row">
-                          <span className="elyan-box__label">Platforms</span>
+                      <div className="feat-box">
+                        <div className="feat-box__row">
+                          <span className="feat-box__label">Platforms</span>
                           <span style={{ color: '#6b6b6b', fontSize: '0.875rem' }}>
                             {p.platforms.join(' · ')}
                           </span>
                         </div>
-                        <div className="elyan-box__row">
-                          <span className="elyan-box__label">Install</span>
-                          <code className="elyan-box__code">{p.npm}</code>
-                        </div>
-                        <div className="elyan-box__row">
-                          <span className="elyan-box__label">Links</span>
-                          <div className="elyan-box__links">
+                        <div className="feat-box__row">
+                          <span className="feat-box__label">Links</span>
+                          <div className="feat-box__links">
                             {p.links.map((l) => (
                               <a
                                 key={l.label}
                                 href={l.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="elyan-box__link"
+                                className="feat-box__link"
                                 onClick={(e) => e.stopPropagation()}
                               >
                                 {l.label} ↗

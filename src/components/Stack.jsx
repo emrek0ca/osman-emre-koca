@@ -1,11 +1,10 @@
 const SKILLS = [
-  'HTML5', 'CSS3', 'TypeScript', 'Node.js',
-  'Next.js', 'Astro', 'AWS', 'Stripe',
-  'React.js', 'JavaScript', 'Vite', 'Express.js',
-  'Python', 'Flutter', 'Dart',
-  'Nginx', 'Linux', 'PM2',
-  'PocketBase', 'SQLite', 'SQL',
-  'Git', 'GitHub', 'npm',
+  'TypeScript', 'Node.js', 'Express.js', 'JavaScript',
+  'REST APIs', 'PostgreSQL', 'SQLite', 'SQL',
+  'LLM API Integrations', 'Agent Orchestration', 'Payment Integrations',
+  'Linux', 'Nginx', 'PM2', 'Git', 'GitHub',
+  'React', 'React Native', 'Next.js', 'Vite', 'TailwindCSS',
+  'Python', 'Flutter', 'Dart', 'AWS', 'Stripe', 'Astro', 'PocketBase', 'npm',
 ]
 
 export default function Stack() {

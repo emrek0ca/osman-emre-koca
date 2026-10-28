@@ -15,9 +15,9 @@ const LINKS = [
     href: 'https://github.com/emrek0ca',
   },
   {
-    label: 'Elyan',
-    value: 'elyan.dev',
-    href: 'https://elyan.dev',
+    label: 'Wiqo',
+    value: 'wiqoai.com',
+    href: 'https://wiqoai.com',
   },
   {
     label: 'Phone',
@@ -32,8 +32,8 @@ export default function Contact() {
       <div className="section-inner">
         <h2 className="sh">Get in Touch</h2>
         <p className="sh-sub">
-          Open to remote full-stack and backend roles. Available immediately.
-          Based in Ankara, Turkey — working remotely worldwide.
+          Open to remote backend, AI and full-stack roles, full-time or contract.
+          Available immediately. Based in Ankara, Turkey — working remotely worldwide.
         </p>
 
         <nav className="contact-links" aria-label="Contact">

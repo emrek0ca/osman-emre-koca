@@ -26,17 +26,17 @@ export default function Hero() {
         </h1>
         <div ref={restRef}>
           <p className="hero__sub">
-            Software engineer &amp; founder building real products since 2021.
-            Currently building{' '}
+            Backend &amp; AI software engineer and founder, shipping production
+            systems since 2021. Currently building{' '}
             <a
-              href="https://elyan.dev"
+              href="https://wiqoai.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hero__link"
             >
-              Elyan
+              Wiqo
             </a>
-            {' '}— an AI agent for your computer.
+            {' '}— an AI agent that turns natural-language requests into tasks on your computer.
           </p>
           <div className="hero__links">
             <a href="mailto:osmanemrekoca@gmail.com" className="hero__link">
@@ -44,12 +44,12 @@ export default function Hero() {
             </a>
             <span style={{ color: '#d4d4d4' }}>·</span>
             <a
-              href="https://elyan.dev"
+              href="https://wiqoai.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hero__link"
             >
-              elyan.dev ↗
+              wiqoai.com ↗
             </a>
             <span style={{ color: '#d4d4d4' }}>·</span>
             <a
